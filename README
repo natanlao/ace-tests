@@ -1,0 +1,11 @@
+Download ACE practice tests for the AP European History textbook and
+generate paper tests and answer keys as PDFs with LaTeX. It should be
+able to do the same thing for The American Pageant (for AP US History).
+
+Super old project, don't judge me.
+
+    virtualenv venv
+    . venv/bin/activate
+    pip install -r requirements.txt
+    python ace.py
+    python gen.py

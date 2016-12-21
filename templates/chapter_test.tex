@@ -1,0 +1,28 @@
+\documentclass[]{exam}
+
+\begin{document}
+
+((* block header *))((* endblock header *))
+
+\begin{center}
+    ((( bookname | escape_tex )))
+    Chapter ((( chapter )))
+\end{center}
+
+\begin{questions}
+
+((* for question_id, question in questions.iteritems() *))
+\question
+((( question.question | escape_tex )))
+\begin{choices}
+    ((* for letter in question if not letter == "question" *))
+    ((* if question[letter]["correct"] *))
+    \CorrectChoice ((( question[letter]["text"] | escape_tex )))
+    ((* elif not question[letter]["correct"] *))
+    \choice ((( question[letter]["text"] | escape_tex )))
+    ((* endif *))
+    ((* endfor *))
+\end{choices}
+((* endfor *))
+\end{questions}
+\end{document}
